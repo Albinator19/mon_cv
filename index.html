@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Mini CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card-img-top {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mon Mini CV</a>
+  </div>
+</nav>
+
+<!-- Section principale -->
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Card -->
+      <div class="card text-center">
+        <img src="photo_cv_claire_floue_carree.jpg" class="card-img-top mx-auto mt-4" alt="Photo de profil">
+        <div class="card-body">
+          <h4 class="card-title">Albin Dérian</h4>
+          <p class="card-text"><strong>Étudiant en Cybersécurité et Informatique</strong><br>INSA Hauts-de-France</p>
+
+          <!-- Onglets -->
+          <ul class="nav nav-tabs" id="cvTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="exp-tab" data-bs-toggle="tab" data-bs-target="#exp" type="button">Expériences</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="edu-tab" data-bs-toggle="tab" data-bs-target="#edu" type="button">Formation</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button">Compétences</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button">Projets</button>
+            </li>
+          </ul>
+
+          <!-- Contenu des onglets -->
+          <div class="tab-content mt-3 text-start">
+            <!-- Expériences -->
+            <div class="tab-pane fade show active" id="exp">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <strong>Projet réseau sécurisé</strong> – INSA (2025)<br>
+                  Conception d'une architecture sécurisée pour un réseau d'entreprise fictif.
+                </li>
+                <li class="list-group-item">
+                  <strong>Participation à un CTF</strong> – Événement cybersécurité (2024)<br>
+                  Résolution de défis en sécurité web, cryptographie, forensic.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Formation -->
+            <div class="tab-pane fade" id="edu">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <strong>INSA Hauts-de-France</strong> – Informatique & Cybersécurité (2024 - aujourd'hui)
+                </li>
+                <li class="list-group-item">
+                  <strong>Baccalauréat Général</strong> – Spécialité Maths-Physique (2022)
+                </li>
+              </ul>
+            </div>
+
+            <!-- Compétences avec tooltips -->
+            <div class="tab-pane fade" id="skills">
+              <p>
+                <span class="badge bg-secondary me-2" data-bs-toggle="tooltip" title="Automatisation et scripting">Python</span>
+                <span class="badge bg-secondary me-2" data-bs-toggle="tooltip" title="Administration, sécurité et shell">Linux</span>
+                <span class="badge bg-secondary me-2" data-bs-toggle="tooltip" title="Analyse réseau">Wireshark</span>
+                <span class="badge bg-secondary me-2" data-bs-toggle="tooltip" title="Exploitation de failles">Metasploit</span><br>
+                <span class="badge bg-info text-dark me-2" data-bs-toggle="tooltip" title="Maîtrise des bases web">HTML</span>
+                <span class="badge bg-info text-dark me-2" data-bs-toggle="tooltip" title="Mise en forme">CSS</span>
+                <span class="badge bg-info text-dark me-2" data-bs-toggle="tooltip" title="Programmation côté client">JavaScript</span>
+                <span class="badge bg-info text-dark me-2" data-bs-toggle="tooltip" title="Framework CSS">Bootstrap</span>
+              </p>
+            </div>
+
+            <!-- Projets avec carrousel -->
+            <div class="tab-pane fade" id="projects">
+              <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="cyber.webp" class="d-block w-100" alt="Projet Sécurité">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Sécurisation d'une entreprise</h5>
+                      <p>Recherche de vulnérabilité et sensibilisation.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="echecs.PNG" class="d-block w-100" alt="Projet Mobile">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Appli Mobile</h5>
+                      <p>Application d'un jeu d'échec responsive et fonctionnelle.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bouton pour ouvrir la modale -->
+          <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#lettreModal">
+            Voir ma lettre de motivation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Modale contenant la lettre de motivation -->
+<div class="modal fade" id="lettreModal" tabindex="-1" aria-labelledby="lettreModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-start">
+      <div class="modal-header">
+        <h5 class="modal-title" id="lettreModalLabel">Lettre de motivation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Madame, Monsieur,<br><br>
+          Je suis actuellement étudiant à l'INSA Hauts de France, où je me spécialise en Cybersécurité et Informatique.
+          Passionné par les technologies de l'information et la protection des données, je suis à la recherche d'un stage
+          qui me permettra de mettre en pratique mes compétences et d'acquérir une expérience précieuse dans le domaine.
+        </p>
+        <p>
+          Je suis convaincu que mon parcours académique et mes projets personnels font de moi un candidat idéal pour un
+          stage dans votre entreprise. Je suis motivé, curieux et prêt à relever de nouveaux défis.
+        </p>
+        <p>
+          Je vous remercie pour l'attention portée à ma candidature et reste à votre disposition pour un entretien.
+        </p>
+        <p>Cordialement,<br>Albin Dérian</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Activer les tooltips
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  });
+</script>
+
+</body>
+</html>
+
